@@ -1,29 +1,30 @@
-# Next.js + Tailwind CSS Example
+# Twill App
+[![Awesome](https://awesome.re/badge-flat2.svg)](https://github.com/radespratama/Twill.git#readme)
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
-
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
-
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+## Getting Started
+#### Instalation :
+<span>If you want to add this project to your own computer, you can install it by following the method below</span>
+```
+git clone https://github.com/radespratama/Twill.git yourReponame
+```
+```
+npm install || yarn install
+```
+```
+npm start || yarn start
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+#### Built With
+
+* [Next JS](https://reactjs.org/docs/create-a-new-react-app.html) - The web framework used
+* [Tailwindcss](https://tailwindcss.com) - Styling
+
+#### Contributions
+Do you want this project to be better? You can contribute to this project, I am very open if there is a contribution to this project.
+
+![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)
+
+#### Authors
+
+* **Putu Rades Pratama** - *Initial work* - [radespratama](https://github.com/radespratama)
