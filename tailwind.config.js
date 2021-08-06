@@ -965,6 +965,7 @@ module.exports = {
       }
 
       addUtilities(utilities);
-    })
+    }),
+    require('tailwind-scrollbar-hide'),
   ],
 }

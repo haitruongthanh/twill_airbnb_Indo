@@ -1,11 +1,14 @@
 import Header from '@/components/global/Header';
 import Footer from '@/components/global/Footer';
 
+import { ThemeProvider } from 'hooks/useDarkMode';
+import UseToggler from 'hooks/useToggler'
+
 export default function Layout({ children }) {
     return (
-        <div className="bg-gray-50 dark:bg-gray-800 antialiased">
+        <div className="bg-white dark:bg-gray-800">
             <Header />
-            <main className="container mx-auto flex-wrap min-h-screen px-4">
+            <main className="flex-wrap min-h-screen">
                 {children}
             </main>
             <Footer />

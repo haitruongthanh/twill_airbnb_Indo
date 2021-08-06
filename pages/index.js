@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Layout from '@/components/global/Layout';
 
-export default function Home() {
+import Banner from '@/components/parts/Banner';
+import Content from '@/components/parts/Content';
+
+export default function Home({ dataExplore, dataCarousel }) {
     return (
         <>
             <Head>
@@ -9,8 +12,24 @@ export default function Home() {
                 <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
             </Head>
             <Layout>
-
+                <Banner />
+                <Content dataExplore={dataExplore} dataCarousel={dataCarousel} />
             </Layout>
         </>
     )
+}
+
+export async function getStaticProps() {
+    const dataExplore = await fetch('https://links.papareact.com/pyp')
+        .then(res => res.json());
+
+    const dataCarousel = await fetch('https://links.papareact.com/zp1')
+        .then(res => res.json());
+
+    return {
+        props: {
+            dataExplore,
+            dataCarousel
+        }
+    }
 }
