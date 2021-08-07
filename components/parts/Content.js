@@ -1,5 +1,6 @@
 import SmallCard from '@/components/parts/SmallCard';
 import MediumCard from '@/components/parts/MediumCard';
+import LargeCard from '@/components/parts/LargeCard';
 
 export default function Content({ dataExplore, dataCarousel }) {
     return (
@@ -30,6 +31,15 @@ export default function Content({ dataExplore, dataCarousel }) {
                         />
                     ))}
                 </div>
+            </section>
+
+            <section className="py-16 relative cursor-pointer">
+                <LargeCard
+                    img="https://links.papareact.com/4cj"
+                    title="The Greatest Outdoors"
+                    description="Whislists curated by Twill."
+                    buttonText="Get Inspired"
+                />
             </section>
         </article>
     )
