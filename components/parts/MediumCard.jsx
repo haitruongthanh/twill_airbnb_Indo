@@ -10,7 +10,7 @@ export default function MediumCard({ img, title }) {
                     className="rounded-2xl"
                 />
             </div>
-            <h3 className="font-semibold text-lg text-gray-700 my-3 mx-2">{title}</h3>
+            <h3 className="font-semibold text-lg text-gray-700 my-3 mx-2 select-none">{title}</h3>
         </div>
     )
 }

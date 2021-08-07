@@ -8,7 +8,7 @@ export default function LargeCard({ img, title, description, buttonText }) {
                     src={img}
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-2xl"
+                    className="rounded-2xl animate-pulse"
                 />
             </div>
             <div className="absolute top-24 left-7 md:top-32 md:left-12">

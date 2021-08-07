@@ -6,3 +6,4 @@
     .nav-search-light::placeholder { color: white; }
     .nav-search-dark::placeholder { color: #6B7280 }
 }
+* { scrollbar-width: none; }

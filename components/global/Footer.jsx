@@ -45,7 +45,7 @@ export default function Footer() {
 
     return (
         <footer className="border-t bg-gray-100">
-            <nav className="footer-item grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 px-32 py-12">
+            <nav className="footer-item grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 px-10 py-4 lg:px-32 lg:py-12">
                 {FooterContent.map(({ name, links }) => (
                     <div className="space-y-5 flex flex-col" key={name}>
                         <h5 className="font-bold text-base uppercase text-gray-700">{name}</h5>
@@ -57,7 +57,7 @@ export default function Footer() {
                     </div>
                 ))}
             </nav>
-            <div className="flex flex-col items-center justify-between px-10 py-5 space-y-4 md:space-y-0 md:flex-row md:px-32 md:py-10">
+            <div className="flex flex-col items-center justify-between px-10 py-5 space-y-4 md:space-y-0 md:flex-row lg:px-32 lg:py-10">
                 <p className="font-normal text-center md:text-left text-sm text-gray-500 select-none">&copy; 2021 Twill, Inc. &bull; Privasi &bull; Ketentuan &bull; Peta Situs</p>
                 <div className="flex items-center">
                     <GlobeAltIcon className="w-5 h-5 text-gray-500 mr-1" />
