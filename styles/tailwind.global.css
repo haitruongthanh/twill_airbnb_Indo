@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .nav-search-light::placeholder { color: white; }
+    .nav-search-dark::placeholder { color: #6B7280 }
+}

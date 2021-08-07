@@ -6,7 +6,7 @@ import UseToggler from 'hooks/useToggler'
 
 export default function Layout({ children }) {
     return (
-        <div className="bg-white dark:bg-gray-800">
+        <div className="bg-gray-50 dark:bg-gray-800">
             <Header />
             <main className="flex-wrap min-h-screen">
                 {children}
