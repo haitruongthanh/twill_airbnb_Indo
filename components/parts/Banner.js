@@ -11,7 +11,7 @@ export default function Banner() {
                 />
                 <div className="banner-content absolute top-1/2 w-full text-center">
                     <p className="text-base font-bold text-gray-700 sm:text-lg select-none">Not sure where to go? Perfect.</p>
-                    <button className="text-blue-800 bg-white px-7 py-3 md:px-12 md:py-4 text-sm md:text-base shadow-md rounded-full font-semibold my-3 duration-300 outline-none transition-all hover:shadow-xl active:scale-90 tracking-wide">Flexible Traveling</button>
+                    <button className="text-white bg-gray-700 px-7 py-3 md:px-11 md:py-4 text-sm md:text-base shadow-md rounded-xl font-semibold my-3 duration-300 outline-none transition-all hover:shadow-xl active:scale-90 tracking-wide">Perjalanan fleksibel</button>
                 </div>
             </div>
         </article>

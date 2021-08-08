@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+* { scrollbar-width: none; }
+
 @layer utilities {
     .nav-search-light::placeholder { color: white; }
     .nav-search-dark::placeholder { color: #6B7280 }
 }
-* { scrollbar-width: none; }
+
+@layer components {
+    .btn-tag {
+        @apply text-sm my-1 hover:shadow-lg 
+        font-medium select-none active:scale-95 
+        text-gray-500 border-2 border-gray-200 
+        px-2 py-1 rounded-lg cursor-default transform transition duration-100 ease-out;
+    }
+}
