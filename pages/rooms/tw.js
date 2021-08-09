@@ -1,9 +1,11 @@
+import Head from 'next/head';
+
 import { useRouter } from 'next/dist/client/router';
+import { format } from 'date-fns';
 import LayoutDetail from '@/components/global/LayoutDetail';
 import DetailsContent from '@/components/parts/DetailsContent';
-import { format } from 'date-fns';
 
-export default function TwRoom() {
+export default function TwRoom({ searchResult }) {
     const router = useRouter();
     // Destructure isi dari router.query
     const { location, startDate, endDate, guestNumber } = router.query;
@@ -13,12 +15,29 @@ export default function TwRoom() {
     const range = `${formateStartDate} - ${formateEndDate}`;
 
     return (
-        <LayoutDetail placeholder={`${location} | ${range} | ${guestNumber} tamu`}>
-            <DetailsContent
-                location={location}
-                guestNumber={guestNumber}
-                range={range}
-            />
-        </LayoutDetail>
+        <>
+            <Head>
+                <title>Twill Apps - {location}</title>
+            </Head>
+            <LayoutDetail placeholder={`${location} | ${range} | ${guestNumber} tamu`}>
+                <DetailsContent
+                    location={location}
+                    guestNumber={guestNumber}
+                    startDate={formateStartDate}
+                    endDate={formateEndDate}
+                    data={searchResult}
+                />
+            </LayoutDetail>
+        </>
     )
+}
+
+export async function getServerSideProps() {
+    const searchResult = await fetch("https://jsonkeeper.com/b/XMPP").then(res => res.json());
+
+    return {
+        props: {
+            searchResult,
+        }
+    }
 }

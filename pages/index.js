@@ -20,10 +20,10 @@ export default function Home({ dataExplore, dataCarousel }) {
 }
 
 export async function getStaticProps() {
-    const dataExplore = await fetch('https://links.papareact.com/pyp')
+    const dataExplore = await fetch('https://jsonkeeper.com/b/YVY9')
         .then(res => res.json());
 
-    const dataCarousel = await fetch('https://links.papareact.com/zp1')
+    const dataCarousel = await fetch('https://jsonkeeper.com/b/5B3J')
         .then(res => res.json());
 
     return {

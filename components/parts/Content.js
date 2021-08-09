@@ -2,8 +2,6 @@ import SmallCard from '@/components/parts/SmallCard';
 import MediumCard from '@/components/parts/MediumCard';
 import LargeCard from '@/components/parts/LargeCard';
 
-import Illustration from 'public/Illustration-olimpiade.webp';
-
 export default function Content({ dataExplore, dataCarousel }) {
     const classButtonCardOne = `
     bg-white text-gray-700
@@ -31,7 +29,7 @@ export default function Content({ dataExplore, dataCarousel }) {
 
             <section className="py-16 relative cursor-pointer">
                 <LargeCard
-                    img={Illustration}
+                    img="https://storage-dummy-2.netlify.app/public/Illustration-gGbDtn.webp"
                     title="Pengalaman Atlet Olimpiade & Paralimpiade"
                     description="Daftar keinginan terbaik dari Twill."
                     buttonText="Telusuri sekarang"

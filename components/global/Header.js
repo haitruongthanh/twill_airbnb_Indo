@@ -21,13 +21,21 @@ import TwDark from 'public/tw-grt.svg';
 import TwLight from 'public/tw-grt-white.svg';
 
 export default function Header({ isClean, isNotClean, placeholder }) {
+    const [isShadow, setIsShadow] = useState(false);
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-
     const [guestNumber, setGuestNumber] = useState(1);
 
     const router = useRouter();
+
+    function changeBackground() {
+        if (window.scrollY >= 10) {
+            setIsShadow(true);
+        } else {
+            setIsShadow(false);
+        }
+    }
 
     function handleSelect(ranges) {
         setStartDate(ranges.selection.startDate);
@@ -58,13 +66,13 @@ export default function Header({ isClean, isNotClean, placeholder }) {
         setSearchInput('');
     }
 
-    const [isShadow, setIsShadow] = useState(false);
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            setIsShadow(window.scrollY > 10);
-        });
-        return () => false;
-    }, []);
+        if (typeof window !== "undefined") {
+            window.addEventListener('scroll', changeBackground);
+        }
+        return () => window.removeEventListener('scroll', changeBackground);
+    }, [changeBackground]);
+
 
     if (isClean) {
         return (
@@ -148,7 +156,7 @@ export default function Header({ isClean, isNotClean, placeholder }) {
                         <div className={["nav-search hidden sm:flex items-center border rounded-xl hover:shadow-bar duration-500 transition-all", isShadow ? "border-gray-300" : "border-white"].join(" ")}>
                             <input
                                 type="text"
-                                placeholder="Mulai pencarian Anda"
+                                placeholder={placeholder || "Mulai pencarian Anda"}
                                 className={["nav-search w-full outline-none bg-transparent px-4 py-2 text-sm", isShadow ? 'text-gray-600 nav-search-dark' : 'text-white nav-search-light'].join(" ")}
                                 value={searchInput}
                                 onChange={(e) => setSearchInput(e.target.value)}

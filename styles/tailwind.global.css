@@ -7,13 +7,29 @@
 @layer utilities {
     .nav-search-light::placeholder { color: white; }
     .nav-search-dark::placeholder { color: #6B7280 }
+    .card {
+        @apply flex py-7 px-2 pr-4 lg:px-3 border-b cursor-pointer transition duration-200 ease-out 
+        hover:opacity-70 hover:shadow-lg rounded-xl first:border-t last:mb-5;
+    }
 }
 
 @layer components {
-    .btn-tag {
+    .badge-tag {
         @apply text-sm my-1 hover:shadow-lg 
         font-medium select-none active:scale-95 
         text-gray-500 border-2 border-gray-200 
         px-2 py-1 rounded-lg cursor-default transform transition duration-100 ease-out;
+    }
+    .badge-tag-mobile {
+        @apply flex text-left text-gray-600 hover:bg-gray-300 transition-all duration-300 font-medium text-sm py-2 px-4 border-b border-white/10;
+    }
+    .badge-calendar {
+        @apply font-semibold text-gray-700 bg-gray-300/80 p-1 rounded-md;
+    }
+    .btn-setting {
+        @apply bg-gray-200 hover:bg-gray-300/80 p-2 rounded-full outline-none relative transition duration-200 transform active:scale-95;
+    }
+    .card-detail {
+        @apply text-sm font-semibold cursor-pointer select-none;
     }
 }
