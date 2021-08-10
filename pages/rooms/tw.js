@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
 import { format } from 'date-fns';
 import LayoutDetail from '@/components/global/LayoutDetail';
-import DetailsContent from '@/components/parts/DetailsContent';
+import DetailsContent from '@/components/parts/Detail/DetailsContent';
 
 export default function TwRoom({ searchResult }) {
     const router = useRouter();

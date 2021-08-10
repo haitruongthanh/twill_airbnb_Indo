@@ -7,7 +7,7 @@ import UseToggler from 'hooks/useToggler';
 export default function Layout({ children }) {
     return (
         <div className="bg-gray-50 dark:bg-gray-800">
-            <Header isNotClean />
+            <Header isNavbarInteractive />
             <ThemeProvider>
                 <main className="flex-wrap min-h-screen">
                     {children}

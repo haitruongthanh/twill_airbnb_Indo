@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Layout from '@/components/global/Layout';
 
-import Banner from '@/components/parts/Banner';
-import Content from '@/components/parts/Content';
+import Banner from '@/components/parts/Landing/Banner';
+import Content from '@/components/parts/Landing/Content';
 
 export default function Home({ dataExplore, dataCarousel }) {
     return (

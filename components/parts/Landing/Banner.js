@@ -10,7 +10,7 @@ export default function Banner() {
                     objectFit="cover"
                 />
                 <div className="banner-content absolute top-1/2 w-full text-center">
-                    <p className="text-base font-bold text-gray-700 sm:text-lg select-none">Not sure where to go? Perfect.</p>
+                    <p className="text-base font-semibold text-gray-700 sm:text-lg select-none">Belum punya tujuan? Kami bisa membantu Anda.</p>
                     <button className="button-banner">Perjalanan fleksibel</button>
                 </div>
             </div>

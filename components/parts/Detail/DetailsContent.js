@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useRouter } from "next/dist/client/router";
-import DetailsRoom from "@/components/parts/DetailsRoom";
-import DetailsMap from '@/components/parts/DetailsMap';
+import DetailsRoom from "@/components/parts/Detail/DetailsRoom";
+import DetailsMap from '@/components/parts/Detail/DetailsMap';
 
 import {
     ChevronLeftIcon,

@@ -41,4 +41,15 @@
     .button-dark-mode {
         @apply fixed right-8 bottom-10 md:right-10 md:bottom-12 w-12 h-12 bg-gray-800 dark:bg-white flex items-center justify-center rounded-full md:rounded-lg z-40 outline-none;
     }
+    .button-cta-search {
+        @apply flex-grow outline-none select-none text-sm font-medium border-2 border-red-400 text-red-400 py-2 px-6 rounded-xl hover:bg-red-200 duration-300 transition;
+    }
+    .button-cta-cancel {
+        @apply flex-grow outline-none select-none text-sm font-medium border-2 border-gray-700 text-gray-700 py-2 px-6 rounded-xl hover:bg-gray-200 duration-300 transition;
+    }
+}
+
+.column-left {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0.2)), url('https://links.papareact.com/0fm');
+    background-size: cover;
 }

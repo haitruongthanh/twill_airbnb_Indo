@@ -1,32 +1,26 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/dist/client/router';
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/dist/client/router';
+import { DateRangePicker } from 'react-date-range';
+import { UserIcon, UserCircleIcon } from '@heroicons/react/solid';
+import { SearchIcon, GlobeAltIcon, MenuIcon } from '@heroicons/react/outline';
+
+import TwLight from 'public/tw-grt-white.svg';
+import TwDark from 'public/tw-grt.svg';
+
+import { loginDropdown, supportDropdown } from '@/components/support/DummyData';
+
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';
 
-import { DateRangePicker } from 'react-date-range';
-
-import {
-    SearchIcon,
-    GlobeAltIcon,
-    MenuIcon,
-} from '@heroicons/react/outline';
-import {
-    UserIcon,
-    UserCircleIcon
-} from '@heroicons/react/solid';
-
-import TwDark from 'public/tw-grt.svg';
-import TwLight from 'public/tw-grt-white.svg';
-import { set } from 'date-fns';
-
-export default function Header({ isClean, isNotClean, placeholder }) {
+export default function Header({ isNavbarClean, isNavbarInteractive, placeholder }) {
     const [isShadow, setIsShadow] = useState(false);
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [guestNumber, setGuestNumber] = useState(1);
+    const [isLogin, setIsLogin] = useState(false);
 
     const router = useRouter();
 
@@ -49,7 +43,6 @@ export default function Header({ isClean, isNotClean, placeholder }) {
         key: 'selection'
     }
 
-    // Fungsi sementara untuk handle buttton Search di searchbar
     function searchItem() {
         router.push({
             pathname: '/rooms/tw',
@@ -62,7 +55,6 @@ export default function Header({ isClean, isNotClean, placeholder }) {
         });
     }
 
-    // Untuk menghapus value dari searchbar
     function resetInput() {
         setSearchInput('');
     }
@@ -74,18 +66,13 @@ export default function Header({ isClean, isNotClean, placeholder }) {
         return () => window.removeEventListener('scroll', changeBackground);
     }, [changeBackground]);
 
-    if (isClean) {
+    if (isNavbarClean) {
         return (
             <header className={["w-full bg-white dark:bg-gray-50 sticky top-0 left-0 z-50 border-b", isShadow ? "shadow-bar" : ""].join(" ")}>
                 <div className="container mx-auto p-4 md:px-6">
                     <nav className="grid grid-cols-2 sm:grid-cols-3">
                         <div onClick={() => router.push("/")} className="relative flex items-center h-11 cursor-pointer my-auto">
-                            <Image
-                                src={TwDark}
-                                objectFit="contain"
-                                layout="fill"
-                                objectPosition="left"
-                            />
+                            <Image src={TwDark} objectFit="contain" layout="fill" objectPosition="left" />
                         </div>
                         <div className="nav-search hidden sm:flex items-center border border-gray-300 rounded-xl hover:shadow-bar duration-500 transition-all">
                             <input
@@ -103,7 +90,25 @@ export default function Header({ isClean, isNotClean, placeholder }) {
                             </Link>
                             <GlobeAltIcon className="h-6 w-6 cursor-pointer text-gray-500" />
                             <div className="flex items-center relative space-x-2 text-blue-700 border-2 p-2 rounded-xl duration-300 transition hover:shadow-md">
-                                <MenuIcon className="h-5 w-5 cursor-pointer text-gray-700" />
+                                <button className="relative" onClick={() => setIsLogin(!isLogin)}>
+                                    <MenuIcon
+                                        className="h-5 w-5 cursor-pointer text-gray-700"
+                                    />
+                                    {isLogin && (
+                                        <ul className="absolute w-[250px] py-2 right-0 -mr-10 rounded-xl overflow-hidden mt-5 bg-white dark:bg-gray-700 shadow-bar">
+                                            {loginDropdown.map(({ name, classNames }) => (
+                                                <li className="li-item" onClick={() => router.push('/auth/login')}>
+                                                    <span className={classNames}>{name}</span>
+                                                </li>
+                                            ))}
+                                            {supportDropdown.map(({ name, classNames }) => (
+                                                <li className="li-item">
+                                                    <span className={classNames}>{name}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </button>
                                 <UserCircleIcon className="h-7 w-7 cursor-pointer text-gray-700" />
                                 <span className="absolute right-2 border-2 border-white top-3 -mt-2 -mr-1 text-xs text-white font-medium bg-red-500 h-3 w-3 shadow-lg rounded-full"></span>
                             </div>
@@ -129,8 +134,10 @@ export default function Header({ isClean, isNotClean, placeholder }) {
                                     />
                                 </div>
                                 <div className="flex items-center space-x-4 px-2">
-                                    <button onClick={resetInput} className="flex-grow outline-none select-none text-sm font-medium border-2 border-red-400 text-red-400 py-2 px-6 rounded-xl hover:bg-red-200 duration-300 transition">Batal</button>
-                                    <button className="flex-grow outline-none select-none text-sm font-medium border-2 border-gray-700 text-gray-700 py-2 px-6 rounded-xl hover:bg-gray-200 duration-300 transition">Cari</button>
+                                    <button onClick={resetInput}
+                                        className="button-cta-cancel">Batal</button>
+                                    <button onClick={searchItem}
+                                        className="button-cta-search">Cari</button>
                                 </div>
                             </div>
                         )}
@@ -140,18 +147,13 @@ export default function Header({ isClean, isNotClean, placeholder }) {
         )
     }
 
-    if (isNotClean) {
+    if (isNavbarInteractive) {
         return (
             <header className={["w-full fixed top-0 left-0 z-50", isShadow ? "bg-white dark:bg-gray-50 shadow-bar border-b" : ""].join(" ")}>
                 <div className="container mx-auto py-2 px-4 md:py-4 md:px-6">
                     <nav className="grid grid-cols-2 sm:grid-cols-3">
                         <div onClick={() => router.push("/")} className="relative flex items-center h-11 cursor-pointer my-auto">
-                            <Image
-                                src={isShadow ? TwDark : TwLight}
-                                objectFit="contain"
-                                layout="fill"
-                                objectPosition="left"
-                            />
+                            <Image src={isShadow ? TwDark : TwLight} objectFit="contain" layout="fill" objectPosition="left" />
                         </div>
                         <div className={["nav-search hidden sm:flex items-center border rounded-xl hover:shadow-bar duration-500 transition-all", isShadow ? "border-gray-300" : "border-white"].join(" ")}>
                             <input
@@ -165,11 +167,29 @@ export default function Header({ isClean, isNotClean, placeholder }) {
                         </div>
                         <div className="flex items-center space-x-3 md:space-x-4 justify-end">
                             <Link href="/membership">
-                                <a className={["font-medium text-sm hidden lg:inline-flex py-2 px-4 rounded-full duration-300 transition", isShadow ? 'text-gray-500 hover:bg-gray-100' : 'text-white hover:bg-gray-700'].join(" ")}>Mulai terima tamu</a>
+                                <a className={["font-medium text-sm hidden lg:inline-flex py-2 px-4 rounded-full duration-300 transition", isShadow ? 'text-gray-500 hover:bg-gray-100' : 'text-white hover:bg-gray-600/70'].join(" ")}>Mulai terima tamu</a>
                             </Link>
                             <GlobeAltIcon className={["h-6 w-6 cursor-pointer", isShadow ? 'text-gray-500' : 'text-white'].join(" ")} />
                             <div className="flex items-center relative space-x-2 text-blue-700 border-2 p-2 rounded-xl duration-300 transition hover:shadow-md">
-                                <MenuIcon className={["h-5 w-5 cursor-pointer", isShadow ? 'text-gray-700' : 'text-white'].join(" ")} />
+                                <button className="relative" onClick={() => setIsLogin(!isLogin)}>
+                                    <MenuIcon
+                                        className={["h-5 w-5 cursor-pointer", isShadow ? 'text-gray-700' : 'text-white'].join(" ")}
+                                    />
+                                    {isLogin && (
+                                        <ul className="absolute w-[250px] py-2 right-0 -mr-10 rounded-xl overflow-hidden mt-5 bg-white dark:bg-gray-700 shadow-bar">
+                                            {loginDropdown.map(({ name, classNames }) => (
+                                                <li className="li-item" onClick={() => router.push('/auth')}>
+                                                    <span className={classNames}>{name}</span>
+                                                </li>
+                                            ))}
+                                            {supportDropdown.map(({ name, classNames }) => (
+                                                <li className="li-item">
+                                                    <span className={classNames}>{name}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </button>
                                 <UserCircleIcon className={["h-7 w-7 cursor-pointer", isShadow ? 'text-gray-700' : 'text-white'].join(" ")} />
                                 <span className={["absolute right-2 border-2 border-white top-3 -mt-2 -mr-1 text-xs text-white font-medium h-3 w-3 shadow-lg rounded-full", isShadow ? "bg-red-500" : "bg-green-500"].join(" ")}></span>
                             </div>
@@ -196,8 +216,10 @@ export default function Header({ isClean, isNotClean, placeholder }) {
                                     />
                                 </div>
                                 <div className="flex items-center space-x-4 px-2">
-                                    <button onClick={resetInput} className="flex-grow outline-none select-none text-sm font-medium border-2 border-red-400 text-red-400 py-2 px-6 rounded-xl hover:bg-red-200 duration-300 transition">Batal</button>
-                                    <button onClick={searchItem} className="flex-grow outline-none select-none text-sm font-medium border-2 border-gray-700 text-gray-700 py-2 px-6 rounded-xl hover:bg-gray-200 duration-300 transition">Cari</button>
+                                    <button onClick={resetInput}
+                                        className="button-cta-cancel">Batal</button>
+                                    <button onClick={searchItem}
+                                        className="button-cta-search">Cari</button>
                                 </div>
                             </div>
                         )}
