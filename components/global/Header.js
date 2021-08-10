@@ -19,6 +19,7 @@ import {
 
 import TwDark from 'public/tw-grt.svg';
 import TwLight from 'public/tw-grt-white.svg';
+import { set } from 'date-fns';
 
 export default function Header({ isClean, isNotClean, placeholder }) {
     const [isShadow, setIsShadow] = useState(false);
@@ -73,10 +74,9 @@ export default function Header({ isClean, isNotClean, placeholder }) {
         return () => window.removeEventListener('scroll', changeBackground);
     }, [changeBackground]);
 
-
     if (isClean) {
         return (
-            <header className={["w-full bg-white sticky top-0 left-0 z-50 border-b", isShadow ? "shadow-bar" : ""].join(" ")}>
+            <header className={["w-full bg-white dark:bg-gray-50 sticky top-0 left-0 z-50 border-b", isShadow ? "shadow-bar" : ""].join(" ")}>
                 <div className="container mx-auto p-4 md:px-6">
                     <nav className="grid grid-cols-2 sm:grid-cols-3">
                         <div onClick={() => router.push("/")} className="relative flex items-center h-11 cursor-pointer my-auto">
@@ -142,7 +142,7 @@ export default function Header({ isClean, isNotClean, placeholder }) {
 
     if (isNotClean) {
         return (
-            <header className={["w-full fixed top-0 left-0 z-50", isShadow ? "bg-white shadow-bar border-b" : ""].join(" ")}>
+            <header className={["w-full fixed top-0 left-0 z-50", isShadow ? "bg-white dark:bg-gray-50 shadow-bar border-b" : ""].join(" ")}>
                 <div className="container mx-auto py-2 px-4 md:py-4 md:px-6">
                     <nav className="grid grid-cols-2 sm:grid-cols-3">
                         <div onClick={() => router.push("/")} className="relative flex items-center h-11 cursor-pointer my-auto">
@@ -161,7 +161,7 @@ export default function Header({ isClean, isNotClean, placeholder }) {
                                 value={searchInput}
                                 onChange={(e) => setSearchInput(e.target.value)}
                             />
-                            <SearchIcon className={["hidden md:inline-flex h-10 rounded-full p-2 cursor-pointer mx-4", isShadow ? "text-gray-500" : "text-white"].join(" ")} />
+                            <SearchIcon className={["hidden sm:inline-flex h-10 rounded-full p-2 cursor-pointer mx-4", isShadow ? "text-gray-500" : "text-white"].join(" ")} />
                         </div>
                         <div className="flex items-center space-x-3 md:space-x-4 justify-end">
                             <Link href="/membership">

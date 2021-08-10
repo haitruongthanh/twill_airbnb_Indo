@@ -13,7 +13,7 @@ export default function Content({ dataExplore, dataCarousel }) {
     return (
         <article className="max-w-7xl mx-auto px-8 sm:px-16">
             <section className="py-6">
-                <h2 className="text-3xl font-bold pb-5 text-gray-700 select-none">Jelajahi Sekitar</h2>
+                <h2 className="text-3xl font-bold pb-5 text-gray-700 dark:text-white select-none">Jelajahi Sekitar</h2>
 
                 <div className="content-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {dataExplore?.map(({ img, location, distance }) => (
@@ -38,7 +38,7 @@ export default function Content({ dataExplore, dataCarousel }) {
             </section>
 
             <section className="py-6">
-                <h2 className="text-3xl font-bold pb-5 text-gray-700 select-none">Tinggal di mana saja</h2>
+                <h2 className="text-3xl font-bold pb-5 text-gray-700 dark:text-white select-none">Tinggal di mana saja</h2>
                 <div className="flex space-x-5 overflow-scroll scrollbar-hide p-3 -ml-3">
                     {dataCarousel?.map(({ img, title }) => (
                         <MediumCard

@@ -20,17 +20,18 @@ export default function DetailsContent({ location, startDate, endDate, guestNumb
     return (
         <article className="container mx-auto flex flex-col">
             <section className="py-5 flex-grow px-4 lg:px-6">
-                <button onClick={() => router.push("/")} className="flex duration-300 transition-all items-center text-blue-700 hover:text-blue-700/80 font-semibold text-base cursor-pointer">
+                <button onClick={() => router.push("/")} className="flex duration-300 transition-all items-center text-blue-700 dark:text-white hover:text-blue-700/80 font-semibold text-base cursor-pointer">
                     <ChevronLeftIcon className="h-3 w-3" />
                     Back
                 </button>
-                <p className="text-xs font-medium text-gray-600/70 mt-4 lg:mt-6 mb-4">
+                <p className="text-xs font-medium text-gray-600/70 dark:text-white mt-4 lg:mt-6 mb-4">
                     300+ Tempat menginap{" "}
                     <span className="badge-calendar">{startDate}</span>{" - "}<br className="lg:hidden" />
                     <span className="badge-calendar leading-9 lg:leading-3">{endDate}</span>{" "}
-                    untuk <span className="font-semibold text-gray-700">{guestNumber}</span> tamu
+                    untuk <span className="font-semibold text-gray-700 dark:text-gray-300">{guestNumber}</span> tamu
                 </p>
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug lg:leading-relaxed mt-2 mb-4 lg:mb-6">Tempat menginap di {location}</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white 
+                leading-snug lg:leading-relaxed mt-2 mb-4 lg:mb-6">Tempat menginap di {location}</h1>
 
                 <div className="badge-wrapper relative z-30">
                     <button onClick={() => setIsSetting(!isSetting)} className="block lg:hidden btn-setting">

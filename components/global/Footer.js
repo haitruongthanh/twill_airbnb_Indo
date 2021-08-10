@@ -50,21 +50,21 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="border-t bg-gray-100">
+        <footer className="border-t dark:border-black/60 bg-gray-100 dark:bg-gray-800">
             <nav className="footer-item grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 px-10 py-4 lg:px-32 lg:py-12">
                 {FooterContent.map(({ name, links }) => (
                     <div className="space-y-5 flex flex-col" key={name}>
-                        <h5 className="font-bold text-sm uppercase text-gray-700">{name}</h5>
+                        <h5 className="font-bold text-sm uppercase text-gray-700 dark:text-white">{name}</h5>
                         {links.map(({ nameLinks, path }) => (
                             <Link href={path} key={nameLinks}>
-                                <a className="text-sm text-gray-500 font-medium hover:underline hover:text-gray-600">{nameLinks}</a>
+                                <a className="text-sm text-gray-500 dark:text-gray-400 font-medium hover:underline hover:text-gray-600">{nameLinks}</a>
                             </Link>
                         ))}
                     </div>
                 ))}
             </nav>
             <div className="flex flex-col items-center justify-between px-10 py-5 space-y-4 md:space-y-0 md:flex-row lg:px-32 lg:py-10">
-                <div className="font-normal text-center md:text-left text-sm text-gray-500 select-none">
+                <div className="font-normal text-center md:text-left text-sm text-gray-500 dark:text-gray-400 select-none">
                     &copy; 2021 Twill, Inc. &bull;{" "}
                     <Link href="/s/privasi">
                         <a className="hover:underline">Privasi</a>
@@ -77,11 +77,11 @@ export default function Footer() {
                     </Link>
                 </div>
                 <div className="flex items-center">
-                    <GlobeAltIcon className="w-5 h-5 text-gray-500 mr-1" />
-                    <p className="font-normal text-sm text-gray-500 underline hover:no-underline cursor-pointer mr-5">Bahasa Indonesia (ID)</p>
+                    <GlobeAltIcon className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-1" />
+                    <p className="font-normal text-sm text-gray-500 dark:text-gray-400 underline hover:no-underline cursor-pointer mr-5">Bahasa Indonesia (ID)</p>
 
-                    <CurrencyDollarIcon className="w-5 h-5 text-gray-500 mr-1" />
-                    <p className="font-normal text-sm text-gray-500 underline hover:no-underline cursor-pointer mr-5">USD</p>
+                    <CurrencyDollarIcon className="w-5 h-5 text-gray-500 dark:text-gray-400 mr-1" />
+                    <p className="font-normal text-sm text-gray-500 dark:text-gray-400 underline hover:no-underline cursor-pointer mr-5">USD</p>
                 </div>
             </div>
         </footer>
