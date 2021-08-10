@@ -1,7 +1,6 @@
 import InfoCard from '@/components/parts/InfoCard';
 
 export default function DetailsRoom({ data }) {
-    // console.log(data)
     return (
         <section className="py-3 flex-grow px-4 lg:px-6">
             <div className="flex flex-col">

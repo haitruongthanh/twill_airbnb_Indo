@@ -33,7 +33,7 @@ export default function TwRoom({ searchResult }) {
 }
 
 export async function getServerSideProps() {
-    const searchResult = await fetch("https://jsonkeeper.com/b/XMPP").then(res => res.json());
+    const searchResult = await fetch("https://jsonkeeper.com/b/EZTD").then(res => res.json());
 
     return {
         props: {
