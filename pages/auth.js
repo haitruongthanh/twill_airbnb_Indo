@@ -51,7 +51,7 @@ export default function Login() {
                     </div>
                 </div>
                 <div className="column-right flex justify-center items-center md:flex md:h-auto md:w-1/2">
-                    <div className="absolute right-5 top-5 w-32 h-10">
+                    <div className="hidden lg:block absolute right-5 top-5 w-32 h-10">
                         <Image src={TwDark} objectFit="contain" />
                     </div>
                     <form className="w-80">
