@@ -25,7 +25,7 @@ export default function Header({ isNavbarClean, isNavbarInteractive, placeholder
     const router = useRouter();
 
     function changeBackground() {
-        if (window.scrollY >= 10) {
+        if (window.scrollY > 30) {
             setIsShadow(true);
         } else {
             setIsShadow(false);
@@ -97,12 +97,12 @@ export default function Header({ isNavbarClean, isNavbarInteractive, placeholder
                                     {isLogin && (
                                         <ul className="absolute w-[250px] py-2 right-0 -mr-10 rounded-xl overflow-hidden mt-5 bg-white dark:bg-gray-700 shadow-bar">
                                             {loginDropdown.map(({ name, classNames }) => (
-                                                <li className="li-item" onClick={() => router.push('/auth/login')}>
+                                                <li className="li-item" key={name} onClick={() => router.push('/auth/login')}>
                                                     <span className={classNames}>{name}</span>
                                                 </li>
                                             ))}
                                             {supportDropdown.map(({ name, classNames }) => (
-                                                <li className="li-item">
+                                                <li className="li-item" key={name}>
                                                     <span className={classNames}>{name}</span>
                                                 </li>
                                             ))}
@@ -149,7 +149,7 @@ export default function Header({ isNavbarClean, isNavbarInteractive, placeholder
 
     if (isNavbarInteractive) {
         return (
-            <header className={["w-full fixed top-0 left-0 z-50", isShadow ? "bg-white dark:bg-gray-50 shadow-bar border-b" : ""].join(" ")}>
+            <header className={["w-full fixed top-0 left-0 z-50 transition-all duration-200", isShadow ? "bg-white dark:bg-gray-50 shadow-bar" : ""].join(" ")}>
                 <div className="container mx-auto py-2 px-4 md:py-4 md:px-6">
                     <nav className="grid grid-cols-2 sm:grid-cols-3">
                         <div onClick={() => router.push("/")} className="relative flex items-center h-11 cursor-pointer my-auto">
@@ -178,12 +178,12 @@ export default function Header({ isNavbarClean, isNavbarInteractive, placeholder
                                     {isLogin && (
                                         <ul className="absolute w-[250px] py-2 right-0 -mr-10 rounded-xl overflow-hidden mt-5 bg-white dark:bg-gray-700 shadow-bar">
                                             {loginDropdown.map(({ name, classNames }) => (
-                                                <li className="li-item" onClick={() => router.push('/auth')}>
+                                                <li className="li-item" key={name} onClick={() => router.push('/auth')}>
                                                     <span className={classNames}>{name}</span>
                                                 </li>
                                             ))}
                                             {supportDropdown.map(({ name, classNames }) => (
-                                                <li className="li-item">
+                                                <li className="li-item" key={name}>
                                                     <span className={classNames}>{name}</span>
                                                 </li>
                                             ))}

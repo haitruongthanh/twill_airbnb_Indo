@@ -963,7 +963,6 @@ module.exports = {
           boxShadow: '2px 1px 15px rgba(0, 0, 0, 0.06)',
         }
       }
-
       addUtilities(utilities);
     }),
     require('tailwind-scrollbar-hide'),
