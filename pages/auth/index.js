@@ -41,19 +41,16 @@ export default function Login() {
                 <div className="column-left flex justify-center items-center h-52 md:flex md:h-auto md:w-1/2">
                     <div className="flex flex-col">
                         <div className="text-gray-100 mt-5 text-center">
-                            <h1 className="text-3xl lg:text-4xl font-bold">
+                            <h1 className="text-3xl px-4 lg:px-0 lg:text-4xl font-bold">
                                 Jelajahi banyak tempat
                             </h1>
-                            <p className="font-normal mt-4">
+                            <p className="font-normal text-sm mt-4">
                                 Temukan pengalaman terbaikmu di Twill.
                             </p>
                         </div>
                     </div>
                 </div>
                 <div className="column-right flex justify-center items-center md:flex md:h-auto md:w-1/2">
-                    <div className="absolute right-5 top-5 w-32 h-10">
-                        <Image src={TwDark} objectFit="contain" />
-                    </div>
                     <form className="w-80">
                         <div className="form-wrapper copy text-gray-800 text-center mt-4 mb-8">
                             <h2 className="text-3xl font-bold">Masuk</h2>

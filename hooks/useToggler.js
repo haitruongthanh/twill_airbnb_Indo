@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeContext } from 'hooks/useDarkMode';
+import { ThemeContext } from '@/hooks/useDarkMode';
 
 import { SunIcon } from '@heroicons/react/outline';
 import { SunIcon as SunDarkIcon } from '@heroicons/react/solid';

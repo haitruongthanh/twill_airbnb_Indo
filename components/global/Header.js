@@ -68,7 +68,7 @@ export default function Header({ isNavbarClean, isNavbarInteractive, placeholder
 
     if (isNavbarClean) {
         return (
-            <header className={["w-full bg-white dark:bg-gray-50 sticky top-0 left-0 z-50 border-b", isShadow ? "shadow-bar" : ""].join(" ")}>
+            <header className={["w-full bg-white transition-all duration-300 dark:bg-gray-50 sticky top-0 left-0 z-50 border-b", isShadow ? "shadow-bar" : ""].join(" ")}>
                 <div className="container mx-auto p-4 md:px-6">
                     <nav className="grid grid-cols-2 sm:grid-cols-3">
                         <div onClick={() => router.push("/")} className="relative flex items-center h-11 cursor-pointer my-auto">
@@ -135,9 +135,11 @@ export default function Header({ isNavbarClean, isNavbarInteractive, placeholder
                                 </div>
                                 <div className="flex items-center space-x-4 px-2">
                                     <button onClick={resetInput}
-                                        className="button-cta-cancel">Batal</button>
+                                        className="button-cta-cancel"
+                                    >Batal</button>
                                     <button onClick={searchItem}
-                                        className="button-cta-search">Cari</button>
+                                        className="button-cta-search"
+                                    >Cari</button>
                                 </div>
                             </div>
                         )}

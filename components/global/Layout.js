@@ -1,8 +1,8 @@
 import Header from '@/components/global/Header';
 import Footer from '@/components/global/Footer';
 
-import { ThemeProvider } from 'hooks/useDarkMode';
-import UseToggler from 'hooks/useToggler';
+import { ThemeProvider } from '@/hooks/useDarkMode';
+import UseToggler from '@/hooks/useToggler';
 
 export default function Layout({ children }) {
     return (
