@@ -2,54 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-* { scrollbar-width: none; }
+* {
+  scrollbar-width: none;
+}
 
 @layer utilities {
-    .nav-search-light::placeholder { color: white; }
-    .nav-search-dark::placeholder { color: #6B7280 }
-    .card {
-        @apply flex py-7 px-2 pr-4 lg:px-3 border-b dark:border-gray-900 cursor-pointer transition duration-200 ease-out 
+  .nav-search-light::placeholder {
+    color: white;
+  }
+  .nav-search-dark::placeholder {
+    color: #6b7280;
+  }
+  .card {
+    @apply flex py-7 px-2 pr-4 lg:px-3 border-b dark:border-gray-900 cursor-pointer transition duration-200 ease-out 
         hover:opacity-70 hover:shadow-lg rounded-xl first:border-t last:mb-5;
-    }
+  }
 }
 
 @layer components {
-    .badge-tag {
-        @apply text-sm my-1 hover:shadow-lg 
+  .badge-tag {
+    @apply text-sm my-1 hover:shadow-lg 
         font-medium select-none active:scale-95 
         text-gray-500 border-2 border-gray-200 dark:text-gray-50
         px-2 py-1 rounded-lg cursor-default transform transition duration-100 ease-out;
-    }
-    .badge-tag-mobile {
-        @apply flex text-left text-gray-600 hover:bg-gray-300 transition-all duration-300 font-medium text-sm py-2 px-4 border-b border-white/10;
-    }
-    .badge-calendar {
-        @apply font-semibold text-gray-700 bg-gray-300/80 p-1 rounded-md;
-    }
-    .btn-setting {
-        @apply bg-gray-200 hover:bg-gray-300/80 p-2 rounded-full outline-none relative transition duration-200 transform active:scale-95;
-    }
-    .card-detail {
-        @apply text-sm font-semibold cursor-pointer select-none;
-    }
-    .sm-card {
-        @apply flex items-center m-2 mt-5 rounded-xl duration-300 transition cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 hover:scale-105 transform ease-out;
-    }
-    .button-banner {
-        @apply text-white bg-gray-700 dark:text-gray-700 dark:bg-white px-7 py-3 md:px-11 md:py-4 text-sm md:text-base shadow-md rounded-xl font-semibold my-3 duration-300 outline-none transition-all hover:shadow-xl active:scale-90 tracking-wide;
-    }
-    .button-dark-mode {
-        @apply fixed right-8 bottom-10 md:right-10 md:bottom-12 w-12 h-12 bg-gray-800 dark:bg-white flex items-center justify-center rounded-full md:rounded-lg z-40 outline-none;
-    }
-    .button-cta-search {
-        @apply flex-grow outline-none select-none text-sm font-medium border-2 border-red-400 text-red-400 py-2 px-6 rounded-xl hover:bg-red-200 duration-300 transition;
-    }
-    .button-cta-cancel {
-        @apply flex-grow outline-none select-none text-sm font-medium border-2 border-gray-700 text-gray-700 py-2 px-6 rounded-xl hover:bg-gray-200 duration-300 transition;
-    }
-}
-
-.column-left {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0,0,0,0.2)), url('https://links.papareact.com/0fm');
+  }
+  .badge-tag-mobile {
+    @apply flex text-left text-gray-600 hover:bg-gray-300 transition-all duration-300 font-medium text-sm py-2 px-4 border-b border-white/10;
+  }
+  .badge-calendar {
+    @apply font-semibold text-gray-700 bg-gray-300/80 p-1 rounded-md;
+  }
+  .btn-setting {
+    @apply bg-gray-200 hover:bg-gray-300/80 p-2 rounded-full outline-none relative transition duration-200 transform active:scale-95;
+  }
+  .card-detail {
+    @apply text-sm font-semibold cursor-pointer select-none;
+  }
+  .sm-card {
+    @apply flex items-center m-2 mt-5 rounded-xl duration-300 transition cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 hover:scale-105 transform ease-out;
+  }
+  .button-banner {
+    @apply text-white bg-gray-700 dark:text-gray-700 dark:bg-white px-7 py-3 md:px-11 md:py-4 text-sm md:text-base shadow-md rounded-xl font-semibold my-3 duration-300 outline-none transition-all hover:shadow-xl active:scale-90 tracking-wide;
+  }
+  .button-dark-mode {
+    @apply fixed right-8 bottom-10 md:right-10 md:bottom-12 w-12 h-12 bg-gray-800 dark:bg-white flex items-center justify-center rounded-full md:rounded-lg z-40 outline-none;
+  }
+  .button-cta-search {
+    @apply flex-grow outline-none select-none text-sm font-medium border-2 border-red-400 text-red-400 py-2 px-6 rounded-xl hover:bg-red-200 duration-300 transition;
+  }
+  .button-cta-cancel {
+    @apply flex-grow outline-none select-none text-sm font-medium border-2 border-gray-700 text-gray-700 py-2 px-6 rounded-xl hover:bg-gray-200 duration-300 transition;
+  }
+  .column-left {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+      url("https://links.papareact.com/0fm");
     background-size: cover;
+  }
 }
